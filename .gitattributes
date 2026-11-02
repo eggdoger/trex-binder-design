@@ -1,0 +1,3 @@
+# Preserve the exact bytes covered by the runtime manifest on every platform.
+* -text
+*.zip binary

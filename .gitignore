@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv*/
+.DS_Store
+Thumbs.db
+.env
+.env.*
+!.env.example
+lab-profile.local.json
+*.private.json
+campaigns/
+outputs/

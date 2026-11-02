@@ -1,0 +1,27 @@
+{
+  "profile_kind": "skill_connection_notes_not_campaign_config",
+  "ssh_host_alias": null,
+  "scheduler": null,
+  "remote_asset_root": null,
+  "remote_skill_dir": null,
+  "remote_controller_python": null,
+  "remote_mailbox": null,
+  "remote_campaign_dir": null,
+  "remote_output_root": null,
+  "slurm": {
+    "account": null,
+    "partition": null,
+    "qos": null
+  },
+  "resources": {
+    "gpu_type": null,
+    "worker_gpu_ids": [],
+    "campaign_hours": null
+  },
+  "local_export_dir": null,
+  "remote_backend_root": null,
+  "client_os": null,
+  "execution_location": "remote_linux_server",
+  "data_location": "remote_server",
+  "download_results_by_default": false
+}

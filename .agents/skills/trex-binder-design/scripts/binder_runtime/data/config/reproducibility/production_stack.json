@@ -1,0 +1,66 @@
+{
+  "schema_version": "trex_production_stack.v1",
+  "components": {
+    "proteina_complexa": {
+      "repository": "https://github.com/NVIDIA-BioNeMo/Proteina-Complexa",
+      "git_commit": "5ae24b055d828918296f2aad63616b1f4cc0e491",
+      "branch_at_capture": "dev",
+      "role": "generation plus the Python environment used for AF2/ProteinMPNN dispatch"
+    },
+    "proteina_complexa_community": {
+      "repository": "https://github.com/NVIDIA-BioNeMo/Proteina-Complexa",
+      "git_commit": "d323517efbffe3ea280e4e3d0442b0257a37b5a8",
+      "role": "community-model tree used for AF2 parameters, ColabDesign, and ProteinMPNN",
+      "equivalent_git_commits": [
+        "5ae24b055d828918296f2aad63616b1f4cc0e491"
+      ],
+      "equivalent_source_trees": {
+        "community_models/colabdesign": "844c76c09355e094a29a34c16fead3f63dea3819",
+        "community_models/ProteinMPNN": "6825955f4c3dec0ada2dd0f1a969f61515bd24d2"
+      },
+      "public_install_note": "The public generation commit contains byte-identical tracked ColabDesign and ProteinMPNN source trees. Check those tree IDs and reject tracked changes when using this equivalent checkout; checkpoint contents remain separately verified."
+    },
+    "bindcraft": {
+      "repository": "https://github.com/martinpacesa/BindCraft",
+      "git_commit": "b971db42ba6e091afab63ccb30ae02215150a990",
+      "patch": "external/patches/bindcraft-production.patch",
+      "patch_file_sha256": "dc69de94f8b21a14ebd26e13f41330676161df63b29340fa90d15100f7406268",
+      "production_tracked_diff_sha256": "81b8e5394f5cd68a6c7f8b5355e1d62593cb92cfad6ba612c50019104dc21a28",
+      "role": "hallucination-based binder generation; the patch changes only required executable mode bits"
+    },
+    "boltzgen": {
+      "repository": "https://github.com/HannesStark/boltzgen",
+      "git_commit": "31d9d9b9c72245b4ed6fe8742d6fbf4e1a3552a0",
+      "role": "diffusion-based binder generation"
+    },
+    "af2_parameters": {
+      "manifest": "config/reproducibility/af2_parameters_manifest.json",
+      "content_sha256": "2ce0664041f82ce7fdbbaa523696327e0895465210d066c8bdfd4ed19e4732b0",
+      "n_files": 16,
+      "total_bytes": 5587956571,
+      "role": "external AF2 parameter tree used by canonical structure refiltering"
+    },
+    "proteinmpnn_weights": {
+      "manifest": "config/reproducibility/proteinmpnn_weights_manifest.json",
+      "content_sha256": "3022126a2617a96ded10604eba039b6fcd1ad094512291c2eab9429f463dc160",
+      "n_files": 4,
+      "total_bytes": 26725204,
+      "role": "external ProteinMPNN vanilla model weights used by parent-specific redesign"
+    },
+    "foldseek": {
+      "version": "8dc75c74ad0eddab73cfd905963d13bf74dc012b",
+      "role": "binder-chain structural clustering",
+      "repository": "https://github.com/steineggerlab/foldseek"
+    },
+    "mmseqs2": {
+      "version": "76da68ad7577378410c075049e18666fcc94f8d1",
+      "role": "secondary sequence-diversity clustering",
+      "repository": "https://github.com/soedinglab/MMseqs2"
+    }
+  },
+  "notes": [
+    "Derived from the upstream production stack; retains scientific backend and asset compatibility requirements.",
+    "Controller and decision provider are supplied by the standalone skill; original Qwen and serving environment sections are omitted.",
+    "Execution records contain the bundle hash, target hashes, backend verification checks and runtime versions in codex_provenance_<session>.json."
+  ]
+}

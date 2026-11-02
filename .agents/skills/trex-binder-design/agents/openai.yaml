@@ -1,0 +1,4 @@
+interface:
+  display_name: "T-REX · Binder Design"
+  short_description: "带你从远程环境配置到 binder 设计、筛选和结果导出，计算与数据留在服务器"
+  default_prompt: "用 $trex-binder-design 带我开始 binder design：说明能做什么，根据已有信息判断当前阶段，并给出最合适的下一步。"
