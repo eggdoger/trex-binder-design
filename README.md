@@ -6,7 +6,7 @@
 
 ## 安装到 Codex
 
-1. 下载 [v0.3.10 完整安装包](dist/trex-binder-design-v0.3.10.zip)；可用 [SHA256 文件](dist/trex-binder-design-v0.3.10.zip.sha256) 校验下载。
+1. 下载 [v0.3.10 完整安装包](https://github.com/eggdoger/trex-binder-design/releases/download/v0.3.10/trex-binder-design-v0.3.10.zip)。
 2. 解压后，将整个 `trex-binder-design` 目录放进准备使用它的项目的 `.agents/skills/`。
 3. 检查目录层级如下。不要只复制 `SKILL.md`，也不要多套一层同名目录。
 4. 在 Codex 中打开该项目，新建会话，输入下面的首次使用指令。
